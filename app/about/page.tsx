@@ -9,6 +9,15 @@ import InquiryForm from '@/components/InquiryForm'
 import ClientStories from '@/components/ClientStories'
 
 const About = () => {
+  const data = {
+    intro :`Welcome to Richman Homes, where your dream of finding the perfect home becomes a reality. We are a distinguished and trusted real estate company, 
+    dedicated to helping you achieve your homeownership goals with ease and confidence.
+    At Richman Homes, we believe that your future starts with the right home. Whether you are looking for a place to build lasting memories, 
+    an investment that will secure your financial future, or a smooth and profitable sale of your current property, we are here to make it happen.`,
+    mission: `Our mission at Richman Homes is to empower your real estate dreams. We are committed to providing the expertise, 
+    guidance, and personalized care you need to find the perfect home, make successful real estate investments, and navigate the complexities of the real estate world. 
+    Whether you are a first-time homebuyer, a seasoned investor, or a seller looking to maximize returns, our mission is to be your trusted partner, ensuring your aspirations become reality, one door at a time.`
+  }
   const Xp =({number, text}: {number:string|number, text:string})=>{
     return(
     <div>
@@ -31,8 +40,7 @@ const About = () => {
           <h1 className='font-semibold text-[25px]'>Richman Homes</h1>
           <h2 className='-mt-[5px] text-[15px] text-gold'>Elevating Real Estate Excellence</h2>
           <p className='text-gray-700'>
-            Welcome to Richman Homes, where your dream of finding the perfect home becomes a reality. We are a distinguished and trusted real estate company, dedicated to helping you achieve your homeownership goals with ease and confidence.
-            At Richman Homes, we believe that your future starts with the right home. Whether you are looking for a place to build lasting memories, an investment that will secure your financial future, or a smooth and profitable sale of your current property, we are here to make it happen.
+            {data.intro}
           </p>
           <div className='mt-[30px] flex flex-col gap-[15px] md:flex-row md:justify-between'>
             <Xp number={20} text='Years of expericence' />
@@ -47,7 +55,7 @@ const About = () => {
       <section className='my-[60px] px-[18px] py-[20px] mx-auto'>
         <Header text='OUR MISSION' />
         <p className='text-center max-w-[1000px] mx-auto'>
-          Our mission at Richman Homes is to empower your real estate dreams. We are committed to providing the expertise, guidance, and personalized care you need to find the perfect home, make successful real estate investments, and navigate the complexities of the real estate world. Whether you're a first-time homebuyer, a seasoned investor, or a seller looking to maximize returns, our mission is to be your trusted partner, ensuring your aspirations become reality, one door at a time.
+          {data.mission}
         </p>
       </section>
 
