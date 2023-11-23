@@ -32,7 +32,7 @@ const About = () => {
           <h2 className='-mt-[5px] text-[15px] text-gold'>Elevating Real Estate Excellence</h2>
           <p className='text-gray-700'>
             Welcome to Richman Homes, where your dream of finding the perfect home becomes a reality. We are a distinguished and trusted real estate company, dedicated to helping you achieve your homeownership goals with ease and confidence.
-            At Richman Homes, we believe that your future starts with the right home. Whether you're looking for a place to build lasting memories, an investment that will secure your financial future, or a smooth and profitable sale of your current property, we are here to make it happen.
+            At Richman Homes, we believe that your future starts with the right home. Whether you are looking for a place to build lasting memories, an investment that will secure your financial future, or a smooth and profitable sale of your current property, we are here to make it happen.
           </p>
           <div className='mt-[30px] flex flex-col gap-[15px] md:flex-row md:justify-between'>
             <Xp number={20} text='Years of expericence' />
