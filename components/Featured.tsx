@@ -27,7 +27,7 @@ const Property =()=>{
             <p className='font-light text-[14px]'>{data.location.address + ", " + data.location.city}</p>
         </div>
         <p className='text-red-500 text-[13px] mt-[2px]'>Semi-detached Duplex</p>
-        <p className="text-[14px] text-gray-400 italic mt-[4px] line-clamp-3">"{data.description}"</p>
+        <p className="text-[14px] text-gray-400 italic mt-[4px] line-clamp-3">&lsquo;{data.description}&rsquo;</p>
         <div className='flex justify-between mt-[10px]'>
             <p className='text-[18px] '>${data.price.toLocaleString()}</p>
             <CompareButton propertyInfo={data}/>

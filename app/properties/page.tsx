@@ -12,7 +12,7 @@ import { dataList } from '@/dummyData/data'
 
 const array = [...dataList, ...dataList,...dataList, ...dataList].splice(0, 24)
 
-const page = () => {
+const Page = () => {
   const [viewType, setViewType] = useState<0|1>(0) //0 for grid, 1 for list
   return (
     <div className='lg:pt-[52px] bg-[#f8f9fa]'>
@@ -45,4 +45,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

@@ -69,7 +69,7 @@ const ClientStories = () => {
             {
                 data.map((item, idx)=>(
                     <div key={idx} className="font-light">
-                        <p className="text-center italic">"{item.story}"</p>
+                        <p className="text-center italic">&lsquo;{item.story}&rsquo;</p>
                         <p className="text-right mt-[5px] italic ">- {item.client}</p>
                     </div>
                 ))
