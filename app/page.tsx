@@ -1,113 +1,101 @@
-import Image from 'next/image'
+import Carousel from "@/components/Carousel";
+import Featured from "@/components/Featured";
+import Search from "@/components/Search";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import WhatYouGet from "@/components/WhatYouGet";
+import ClientStories from "@/components/ClientStories";
+import { StaticImageData } from "next/image";
+import Image from "next/image";
+import InquiryForm from "@/components/InquiryForm";
+import logo2 from "@/public/images/logo2.png"
+import Link from "next/link";
 
+export const Header =({text}: {text:string})=>{
+  return(
+    <div className="grid grid-cols-[1fr_auto_1fr] gap-[8px] max-w-[400px] m-auto md:max-w-[450px] lg:max-w-[650px] ">
+      <div className="bg-black h-[1.5px] self-center"/>
+      <h1 className="cardo-font text-[17px] text-center">{text}</h1>
+      <div className="bg-black h-[1.5px] self-center"/>
+    </div>
+  )
+}
+
+export const ReachUsItem =({ icon, header, text}: {icon:StaticImageData|string, header:string, text:string})=>{
+  return(
+    <div className="text-center w-[245px] m-auto md:m-0">
+      <Image src={icon} width={50} height={50} alt={header} className="m-auto" />
+      <p className="text-[18px] mt-[5px]">{header}</p>
+      <p className="text-gray-500 whitespace-pre-line">{text}</p>
+    </div>
+  )
+}
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <section className=" px-[18px] py-[40px] bg-[url('../public/images/background.jpg')] bg-center bg-cover bg-no-repeat bg-blend-darken bg-black/[.38]
+        lg:h-[600px] lg:pt-[150px] lg:bg-fixed">
+        <h1 className='text-center text-[35px] text-white cardo-font spacing
+          lg:mb-[60px]'>
+          DEFINE YOUR <br className='md:hidden'/> LUXURY
+        </h1>
+        <Search />
+      </section>
+
+      <section className="px-[18px] py-[35px]">
+        <section>
+          <Header text="NEW LISTINGS" />
+          <div className="w-[338px] mx-auto md:w-[650px] lg:w-[950px] xl:max-w-[1250px] xl:w-[95%]">
+            <Carousel />
+          </div>
+        </section>
+
+        <section className="mt-[40px] md:mt-[60px] xl:mt-[70px]">
+          <Header text="FEATURED PROPERTIES" />
+          <Featured />
+          <Link href={'/properties'} className='bg-[#DEB653] text-white w-fit px-[20px] block m-auto mt-[40px] lg:mt-[30px] py-[5px] rounded-[6px] cursor-pointer transition duration-100 hover:bg-[#f9cc5a]'>
+            View More
+          </Link>
+        </section>
+      </section>
+
+      <section className="py-[50px] text-white text-[18px] lg:text-[20px] text-center bg-[url('../public/images/background.jpg')] bg-center bg-cover bg-no-repeat bg-blend-darken bg-black/[.45]
+        lg:bg-fixed">
+      </section>
+
+      <section className="py-[30px] px-[18px] lg:h-[550px] relative text-[#2D2F3F]">
+        <h1 className="font-light mx-auto w-fit relative after:w-[60%] after:h-[2px] after:bg-[#2D2F3F] after:absolute after:bottom-[-5px] after:left-0 after:right-0 after:mx-auto">
+          WHAT YOU GET FROM US
+        </h1>
+        <WhatYouGet />
+        <div className=" hidden lg:block bg-[#222C45] absolute left-0 right-0 mx-auto top-[470px] text-white pt-[40px] px-[80px] pb-[60px] w-[750px]">
+          <ClientStories />
         </div>
-      </div>
+      </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section className="py-[20px] h-[200px]  bg-[url('../public/images/background.jpg')] bg-center bg-cover bg-no-repeat bg-blend-darken bg-[#383C4F]/[.8] lg:bg-black/[.38] lg:bg-fixed">
+        <div className="lg:hidden text-white mx-auto px-[18px] max-w-[600px]">
+          <ClientStories />
+        </div>
+      </section>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <section className="bg-[#E7ECF5] py-[30px] px-[18px] ">
+        <h1 className="font-light mx-auto  w-fit relative after:w-[60%] after:h-[2px] after:bg-[#2D2F3F] after:absolute after:bottom-[-5px] after:left-0 after:right-0 after:mx-auto">
+          REACH US FROM ANYWHERE ANYDAY
+        </h1>
+        <div className=" mt-[30px] flex flex-col gap-[40px] md:gap-0 max-w-[900px] justify-between md:flex-row md:items-center md:mx-auto">
+          <ReachUsItem icon={"/images/call.png"} header="Call" text="+1 555 789 1234" />
+          <ReachUsItem icon={"/images/location.png"} header="Location" text="23 Floor Oakwood Towers, Lekki" />
+          <ReachUsItem icon={"/images/email.png"} header="Email" text="richmanhomes@gmail.com" />
+        </div>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <section className="px-[18px] py-[30px] bg-[#222D42] overflow-hidden relative">
+        <div className="mx-auto md:w-[650px] lg:w-[940px] xl:max-w-[1000px] xl:w-[95%]">
+          <InquiryForm />
+        </div>
+        <Image src={logo2} alt="" className="w-[500px] h-auto max-w-none z-[1] absolute opacity-[0.08] left-[80px] top-0 select-none md:w-[850px] md:left-[220px] lg:w-[900px] lg:left-[50vw]" />
+      </section>
+    </>
   )
 }

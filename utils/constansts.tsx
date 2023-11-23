@@ -1,0 +1,1 @@
+export const BASE_IMG_URL = "https://res.cloudinary.com/dxtcb4ebb/image/upload/v1700586036/richman%20homes/properties"

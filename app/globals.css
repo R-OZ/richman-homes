@@ -1,27 +1,129 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html,body{
+  overscroll-behavior-y: contain;
+}
+li{
+  cursor: pointer !important;
+}
+.cardo-font{
+  font-family: 'Cardo', serif;
+  font-weight: 300;
+  line-height: 110%
+}
+.navHeight{
+  height: 52px;
+  transition: height .2s ease;
+}
+.toggleHeight{
+  height: 245px;
+}
+.settings{
+  transition: all .5s ease;
+}
+.rotate-icon{
+  transform: rotate(100deg);
+}
+.gold-radio{
+  @apply w-[14px] h-[14px] bg-transparent border-[1.5px] border-gold rounded-full relative;
+}
+.gold-radio::after{
+  content: "";
+  width: 65%;
+  height: 65%;
+  border-radius: 50%;
+  @apply bg-gold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  transform: translate(-50%, -50%);
+}
+.slick-slider{
+  padding: 10px 0;
+}
+.newListings>.slick-list{
+  padding-bottom: 20px !important;
+  /* height: 400px !important; */
+  /* background-color: red; */
+  /* margin-bottom: -15px !important; */
+}
+.shadowCard{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px !important;
+}
+.reggieSlide{
+  filter: blur(2px);
+  transform: scale(0.8);
+  transition: all .3s ease;
+  background-color: blue;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.naruto{
+  filter: none !important;
+  transform: scale(1) !important;
+  opacity: 1;
+  transition: all .3s ease;
+  /* /* display: inline-flex !important;
+  justify-content: center !important; */
+}
+.tester{
+  width: 214.4px !important;
+}
+.bio{
+  background: red;
+  width: fit-content;
+}
+.clientStory{
+  background-color: red ;
+}
+
+.myDots>li>button{
+  /* background: black !important; */
+  position: relative !important;
+}
+.myDots>li>button::before{
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin: auto;
+  height: 4px !important;
+  width: 4px !important;
+  border-radius: 50%;
+  background-color: white;
+  /* font-size: 5px !important;
+  color: white !important; */
+  opacity: 1 !important;
+  transition: all .2s ease;
+}
+.myDots>.slick-active>button::before{
+  width: 8px !important;
+  height: 8px !important;
+  border: 2px solid white !important;
+  background-color: transparent !important;
+}
+.clientStores>.slick-list{
+  background-color: red !important ;
+}
+.shadowFilter{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.filterHeight{
+  height: 315.5px;
+  @apply h-[315.5px] lg:h-[67.25px];
+  transition: height .2s ease;
+}
+.toggleFilterHeight{
+  height: 580.25px;
+  @apply h-[580.25px] lg:h-[134.5px];
 }
