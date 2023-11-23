@@ -20,8 +20,8 @@ const About = () => {
   return (
     <div className='lg:pt-[52px]'>
        <section className=" px-[18px] py-[40px] bg-[url('../public/images/background.jpg')] bg-center bg-cover bg-no-repeat bg-blend-darken bg-black/[.38]
-        lg:py-[90px] lg: lg:bg-fixed text-white">
-          <h1 className='text-[35px] font-thin cardo-font text-center mt-[52px]'>ABOUT</h1>
+        lg:py-[90px]  lg:bg-fixed text-white">
+          <h1 className='text-[35px] font-thin cardo-font text-center lg:mt-[52px]'>ABOUT</h1>
       </section>
 
       <div className='px-[18px] xl:px-0 py-[20px] md:flex gap-[40px] mx-auto max-w-[1250px]'>

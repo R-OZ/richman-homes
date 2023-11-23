@@ -83,7 +83,7 @@ const Search = () => {
                 <AdvancedOptions />
             </div>
 
-            <Link href={'/properties'} className="text-white text-[20px] bg-gold py-[6px] rounded-[7px]
+            <Link href={'/properties'} className="text-white text-[20px] text-center bg-gold py-[6px] rounded-[7px]
                 lg:py-0 lg:pt-[0] lg:flex lg:flex-col lg:justify-end lg:bg-transparent">
                 <span className="lg:hidden">Search</span>
 

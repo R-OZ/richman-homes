@@ -111,7 +111,7 @@ const Property = () => {
                     <iframe 
                         width=""
                         className="w-full h-[310px] lg:h-[400px] rounded-[5px]"
-                        src="https://www.youtube.com/embed/WcIcVapfqXw?si=0_a8-4X90swHNPVU" 
+                        src="https://www.youtube.com/embed/mJVuZiK9a6I?si=puWTj_0pmskGMO5d" 
                         title="YouTube video player" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                 </div> 

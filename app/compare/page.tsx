@@ -1,6 +1,7 @@
 "use client"
 import { PropertyData } from "@/dummyData/data"
 import { useAppSelector } from "@/redux/store";
+import { Location } from "@/utils/miniServerComponents";
 import { faCircleCheck, faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -9,15 +10,18 @@ const Page = () => {
   const compareState = useAppSelector((state)=> state.compare.value);
   // console.log("DATA LIST==>", compareState)
 
-  function TableHead({imageList} : {imageList: string[]}){
+  function TableHead({propList} : {propList: PropertyData[]}){
     return(
       <tr>
         <th className=" w-[180px]"></th>
         {
-          imageList.map((item, idx)=> 
-            <th key={idx} className="relative h-[150px] w-[200px] md:h-[200px] md:w-[300px] lg:w-[350px]">
-              <Image src={item} fill={true} alt="property-compare-item" className="object-cover object-center" />
-              <p></p>
+          propList.map((item, idx)=> 
+            <th key={idx} className=" h-[150px] px-[12px] py-[8px] w-[200px] md:h-[200px] md:w-[300px] lg:w-[350px]">
+              <div className="relative rounded-[6px] h-[70%]">
+                <Image src={item.coverPhoto} fill={true} alt="property-compare-item" className="rounded-[inherit] object-cover object-center" />
+              </div>
+              <p className="mt-[5px]">{item.title}</p>
+              <Location text={item.location.address + ", " + item.location.city} customStyles="mx-auto w-fit" />
             </th>)
         }
       </tr>
@@ -85,7 +89,7 @@ const Page = () => {
           <div className="mx-auto w-fit max-w-full overflow-x-auto shadow-2xl rounded-[6px] bg-white">
             <table className="group/cTable w-max ">
               <thead className="border-b-[1px] border-gray-300">
-                <TableHead imageList={compareState.map((item)=>item.coverPhoto)} />
+                <TableHead propList={compareState} />
               </thead>
               <tbody>
                 <TableRow feature="Price ($)" compareValues={arrayByKey('price')} />

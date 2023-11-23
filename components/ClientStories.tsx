@@ -50,8 +50,8 @@ const ClientStories = () => {
 
     const settings:Settings ={
         dots: true,
-        autoplay: false,
-        autoplaySpeed: 5000,
+        autoplay: true,
+        autoplaySpeed: 3000,
         slidesToShow: 1,
         arrows: false,
         beforeChange: (current:number, next:number) => setStoryIdx(next),
