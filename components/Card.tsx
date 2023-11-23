@@ -84,16 +84,16 @@ const Card = ({propertyInfo, viewType=0, customStyles}:{propertyInfo:PropertyDat
     ) :(
     
     <div className={` rounded-[6px] bg-white flex h-[200px] shadowCard ${customStyles}`}>
-        <Link href={'/properties/dummy'}>
         <div className='w-[40%] rounded-tl-[inherit] rounded-bl-[inherit] relative overflow-hidden'>
+        <Link href={'/properties/dummy'}>
             <Image src={propertyInfo.coverPhoto} fill={true} alt='house' className='h-[100%] z-1 object-cover object-center transition-all duration-300 lg:hover:scale-[1.2] cursor-pointer'/>
             <span className='absolute top-0 right-0 z-8 px-[4px] py-[5px] rounded-bl-[12px]  bg-[#CCA649]'>
                 <Image src={fireImg} alt='hot property icon' className='w-[17px] h-[17px]'/>
             </span>
             <span className='absolute bottom-0 bg-red-600 text-white px-[13px] py-[2px] text-[13px]'>{propertyInfo.type}</span>
+        </Link>
             
         </div>
-        </Link>
         <div className=' rounded-[inherit] w-[60%] px-[13px] py-[8px] text-[#313041]'>
             <Link href={'/properties/dummy'}>
             <p className='text-[17px] font-medium'>{propertyInfo.title}</p>
