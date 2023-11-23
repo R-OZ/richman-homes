@@ -16,12 +16,12 @@ const Page = () => {
         <th className=" w-[180px]"></th>
         {
           propList.map((item, idx)=> 
-            <th key={idx} className=" h-[150px] px-[12px] py-[8px] w-[200px] md:h-[200px] md:w-[300px] lg:w-[350px]">
+            <th key={idx} className="line h-[180px] px-[12px] py-[8px] w-[260px] md:h-[200px] md:w-[300px] lg:w-[350px]">
               <div className="relative rounded-[6px] h-[70%]">
                 <Image src={item.coverPhoto} fill={true} alt="property-compare-item" className="rounded-[inherit] object-cover object-center" />
               </div>
               <p className="mt-[5px]">{item.title}</p>
-              <Location text={item.location.address + ", " + item.location.city} customStyles="mx-auto w-fit" />
+              <Location text={item.location.address + ", " + item.location.city} customStyles="mx-auto w-fit line-clamp-1" />
             </th>)
         }
       </tr>

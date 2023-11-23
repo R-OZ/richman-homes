@@ -7,6 +7,7 @@ import { Header, ReachUsItem } from '../page'
 import Agent from '@/components/Agent'
 import InquiryForm from '@/components/InquiryForm'
 import ClientStories from '@/components/ClientStories'
+import { BASE_IMG_URL } from '@/utils/constansts'
 
 const About = () => {
   const data = {
@@ -34,7 +35,9 @@ const About = () => {
       </section>
 
       <div className='px-[18px] xl:px-0 py-[20px] md:flex gap-[40px] mx-auto max-w-[1250px]'>
-        <Image src={pic1} alt='house' className='hidden md:block  w-[15%] lg:w-[30%] object-cover object-center' />
+        <div className='relative hidden md:block  w-[15%] lg:w-[100%]'>
+          <Image src={`https://res.cloudinary.com/dxtcb4ebb/image/upload/v1700754591/richman%20homes/ygnm8gjug6lkuw8uo27g.jpg`} fill={true} alt='house' className=' object-cover object-center' />
+        </div>
 
         <section>
           <h1 className='font-semibold text-[25px]'>Richman Homes</h1>
@@ -48,7 +51,9 @@ const About = () => {
             <Xp number={"300"} text='Qualified realtors' />
             <Xp number={"50"} text='Total Branches' />
           </div>
-          <Image src={pic3} alt='house' className='block mt-[40px] md:h-[300px] object-cover lg:h-[400px]' />
+          <div className='relative mt-[40px] h-[200px] md:h-[300px] lg:h-[400px] '>
+            <Image src={`https://res.cloudinary.com/dxtcb4ebb/image/upload/v1700754590/richman%20homes/tllyqhzcn9dxo2aklfvx.jpg`} fill={true} alt='house' className='block  object-cover ' />
+          </div>
         </section>
       </div>
 
