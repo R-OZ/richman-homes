@@ -52,9 +52,6 @@ li{
 }
 .newListings>.slick-list{
   padding-bottom: 20px !important;
-  /* height: 400px !important; */
-  /* background-color: red; */
-  /* margin-bottom: -15px !important; */
 }
 .shadowCard{
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px !important;
@@ -71,8 +68,6 @@ li{
   transform: scale(1) !important;
   opacity: 1;
   transition: all .3s ease;
-  /* /* display: inline-flex !important;
-  justify-content: center !important; */
 }
 .tester{
   width: 214.4px !important;
@@ -86,7 +81,6 @@ li{
 }
 
 .myDots>li>button{
-  /* background: black !important; */
   position: relative !important;
 }
 .myDots>li>button::before{
@@ -101,8 +95,6 @@ li{
   width: 4px !important;
   border-radius: 50%;
   background-color: white;
-  /* font-size: 5px !important;
-  color: white !important; */
   opacity: 1 !important;
   transition: all .2s ease;
 }
